@@ -159,6 +159,6 @@ if(superpoder1 > superpoder2){
 } else {
     printf("Carta 2 Venceu!\n");
 }
-
+ printf("Novo Commit\n");
 return 0;
 }
