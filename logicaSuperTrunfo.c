@@ -258,17 +258,8 @@ case 6:
     break;
  }
 
-//Exibição da Carta Vencedora - Super Poder
-    //printf("*** SUPER PODER ***\n");
-//superpoder = (superpoder1 > superpoder2);
-//if(superpoder1 > superpoder2){
-    //printf(" Carta 1 Venceu!\n");
-//} //else if (superpoder1 < superpoder2){
-    //printf("Carta 2 Venceu!\n");
-//} //else {
-    //printf("Empate!\n");
-//}
 
+ printf ("Novo Commit\n");
 
 return 0;
 }
