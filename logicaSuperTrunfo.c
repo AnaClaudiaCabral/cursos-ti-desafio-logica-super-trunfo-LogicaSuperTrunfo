@@ -34,10 +34,10 @@ printf("De A a H, informe uma letra representando um dos oito Estados Brasileiro
 scanf(" %c", &estado1);
 
 printf("Informe a letra escolhida do Estado seguida de um número de 01 a 04: \n");
-scanf(" %s", &codigo1[20]);
+scanf("%19s", codigo1);
 
 printf("Informe o nome de uma Cidade do Estado informado anteriormente: \n");
-scanf(" %s", &cidade1[50]);
+scanf("%49s", cidade1);
 
 printf("Informe o número de habitantes desta Cidade: \n");
 scanf(" %d", &populacao1);
@@ -54,6 +54,9 @@ scanf(" %i", &turismo1);
 //calculo para comparação
 densidadepopulacional1 = (populacao1)/area1;
 pibpercapita1 = (pib1)/populacao1;
+//Cáculo do Super Poder para a carta 1
+superpoder1 = (populacao1 + area1 + pib1 + turismo1 + pibpercapita1)/densidadepopulacional1;
+
 
     //Bloco de saída de dados Carta 1
 printf("<<< Carta 1 >>>\n");
@@ -74,10 +77,10 @@ printf("De A a H, informe uma letra representando um dos oito Estados Brasileiro
 scanf(" %c", &estado2);
 
 printf("Informe a letra escolhida do Estado seguida de um número de 01 a 04: \n");
-scanf(" %s", &codigo2[20]);
+scanf("%19s", codigo2);
 
 printf("Informe o nome de uma Cidade do Estado informado anteriormente: \n");
-scanf(" %s", &cidade2[50]);
+scanf("%49s", cidade2);
 
 printf("Informe o número de habitantes desta Cidade: \n");
 scanf(" %d", &populacao2);
@@ -96,7 +99,6 @@ densidadepopulacional2 = (populacao2)/area2;
 pibpercapita2 = (pib2)/populacao2;
 
 //Cáculo do Super Poder
-superpoder1 = (populacao1 + area1 + pib1 + turismo1 + pibpercapita1)/densidadepopulacional1;
 superpoder2 = (populacao2 + area2 + pib2 + turismo2 + pibpercapita2)/densidadepopulacional2;
 
     //Bloco de saída de dados Carta 2
@@ -149,8 +151,8 @@ if (turismo1 > turismo2){
 }
     
 resultadodensidadepopulacional = (densidadepopulacional1 < densidadepopulacional2);
-if(densidadepopulacional1 < densidadepopulacional1){
-    printf("A Densidade Populacional da Carta 1 Venceu!\n");
+if(densidadepopulacional1 < densidadepopulacional2){
+    printf("Densidade Populacional - Carta 1 Venceu! (Menor é melhor)\n");
 } else if (densidadepopulacional1 > densidadepopulacional2){
     printf("Densidade Populacional - Carta 2 Venceu!\n");
 } else {
@@ -181,72 +183,72 @@ if(pibpercapita1 > pibpercapita2){
  { 
 case 1:
    printf("População\n");
-   printf("Carta 1: %s - População: %d", populacao1);
-   printf("Carta 2: %s - População: %d", populacao2);
-   if (populacao1 < populacao2){
-    printf("-- Carta 1 Venceu! --\n")
-   } else if (populacao1 > populacao2) {
-    printf("-- Carta 2 Venceu! --\n")
+   printf("Carta 1: %s - População: %d\n", cidade1, populacao1);
+   printf("Carta 2: %s - População: %d\n", cidade2, populacao2);
+   if (populacao1 > populacao2){
+    printf("-- Carta 1 Venceu! --\n");
+   } else if (populacao1 < populacao2) {
+    printf("-- Carta 2 Venceu! --\n");
    } else {
     printf("-- Empate! --\n");
    }
     break;
 case 2:
    printf("Área\n");
-   printf("Carta 1: %s - Área: %.2f", area1);
-   printf("Carta 2: %s - Área: %.2f", area2);
-   if (area1 < area2){
-    printf("-- Carta 1 Venceu! --\n")
-   } else if (area1 > area2) {
-    printf("-- Carta 2 Venceu! --\n")
+   printf("Carta 1: %s - Área: %.2f\n", cidade1, area1);
+   printf("Carta 2: %s - Área: %.2f\n", cidade2, area2);
+   if (area1 > area2){
+    printf("-- Carta 1 Venceu! --\n");
+   } else if (area1 < area2) {
+    printf("-- Carta 2 Venceu! --\n");
    } else {
     printf("-- Empate! --\n");
    }
     break;
 case 3:
    printf("PIB\n");
-   printf("Carta 1: %s - PIB: %.2f", pib1);
-   printf("Carta 2: %s - PIB: %.2f", pib2);
-   if (pib1 < pib2){
-    printf("-- Carta 1 Venceu! --\n")
-   } else if (pib1 > pib2) {
-    printf("-- Carta 2 Venceu! --\n")
+   printf("Carta 1: %s - PIB: %.2f\n", cidade1, pib1);
+   printf("Carta 2: %s - PIB: %.2f\n", cidade2, pib2);
+   if (pib1 > pib2){
+    printf("-- Carta 1 Venceu! --\n");
+   } else if (pib1 < pib2) {
+    printf("-- Carta 2 Venceu! --\n");
    } else {
     printf("-- Empate! --\n");
    }
     break;
 case 4:
    printf("Pontos Turísticos\n");
-   printf("Carta 1: %s - Turismo: %i", turismo1);
-   printf("Carta 2: %s - Turismo: %i", turismo2);
-   if (turismo1 < turismo2){
-    printf("-- Carta 1 Venceu! --\n")
-   } else if (turismo1 > turismo2) {
-    printf("-- Carta 2 Venceu! --\n")
+   printf("Carta 1: %s - Turismo: %i\n", cidade1, turismo1);
+   printf("Carta 2: %s - Turismo: %i\n", cidade2, turismo2);
+   if (turismo1 > turismo2){
+    printf("-- Carta 1 Venceu! --\n");
+   } else if (turismo1 < turismo2) {
+    printf("-- Carta 2 Venceu! --\n");
    } else {
     printf("-- Empate! --\n");
    }
     break;
 case 5:
    printf("Densidade Demográfica\n");
-   printf("Carta 1: %s - Densidade Demográfica: %.2f", densidadepopulacional1);
-   printf("Carta 2: %s - Densidade Demográfica: %.2f", densidadepopulacional2);
-   if (densidadepopulacional1 < densidadepopulacional2){
-    printf("-- Carta 1 Venceu! --\n")
+   printf("Carta 1: %s - Densidade Demográfica: %.2f\n", cidade1, densidadepopulacional1);
+   printf("Carta 2: %s - Densidade Demográfica: %.2f\n", cidade2, densidadepopulacional2);
+   if (densidadepopulacional1 < densidadepopulacional2){ // Menor densidade é melhor
+    printf("-- Carta 1 Venceu! --\n");
    } else if (densidadepopulacional1 > densidadepopulacional2) {
-    printf("-- Carta 2 Venceu! --\n")
+    printf("-- Carta 2 Venceu! --\n");
    } else {
     printf("-- Empate! --\n");
    }
     break;
 case 6:
    printf("Super Poder\n");
-   printf("Carta 1: %s - Super Poder: %.2f", superpoder1);
-   printf("Carta 2: %s - Super Poder: %.2f", superpoder2);
-   if (superpoder1 < superpoder2){
-    printf("-- Carta 1 Venceu! --\n")
-   } else if (superpoder1 > superpoder2) {
-    printf("-- Carta 2 Venceu! --\n")
+   printf("Carta 1: %s - Super Poder: %.2f\n", cidade1, superpoder1);
+   printf("Carta 2: %s - Super Poder: %.2f\n", cidade2, superpoder2);
+   if (superpoder1 > superpoder2){
+    printf("-- Carta 1 Venceu! --\n");
+   } else if (superpoder1 < superpoder2) {
+    printf("-- Carta 2 Venceu! --\n");
    } else {
     printf("-- Empate! --\n");
    }
@@ -255,12 +257,9 @@ case 6:
 
     default:
     printf("Opção Inválida!\n");
-    break;
  }
 
 
- printf ("Novo Commit\n");
 
 return 0;
 }
-
