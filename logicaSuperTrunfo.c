@@ -259,7 +259,7 @@ case 6:
     printf("Opção Inválida!\n");
  }
 
-
+printf("Novo Commit\n");
 
 return 0;
 }
